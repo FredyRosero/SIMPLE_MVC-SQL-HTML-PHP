@@ -1,0 +1,18 @@
+<!doctype html>
+<head>
+<script>
+  function ajaxOnLoad() {
+    var httpRequest = new XMLHttpRequest();
+    var results = document.getElementById('results')
+    httpRequest.onreadystatechange = () => { if (httpRequest.readyState === XMLHttpRequest.DONE) results.innerHTML = httpRequest.responseText };
+    httpRequest.open('GET', 'controller.php');
+    httpRequest.send();  
+  }
+</script>    
+</head>
+<body onload="ajaxOnLoad()">
+  <h1>Hola</h1>
+  <p>mundo!</p>
+  <span id="results"></span>  
+</body>
+</html>
